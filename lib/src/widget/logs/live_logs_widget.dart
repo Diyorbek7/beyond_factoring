@@ -5,22 +5,22 @@ import 'package:flutter/material.dart';
 
 class LiveLogsWidget extends StatelessWidget {
   final Map<String, dynamic> data;
+  final Animation<double> animation;
 
   const LiveLogsWidget({
     super.key,
     required this.data,
+    required this.animation,
   });
 
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
-      duration: const Duration(milliseconds: 270),
+      duration: const Duration(milliseconds: 300),
       curve: Curves.easeInOut,
       child: Row(
         children: [
-          AnimatedContainer(
-            duration: const Duration(milliseconds: 270),
-            curve: Curves.easeInOut,
+          Container(
             height: 100,
             padding: const EdgeInsets.symmetric(horizontal: 52),
             decoration: BoxDecoration(
@@ -38,7 +38,8 @@ class LiveLogsWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextWidget(
-                  text: Utils.getMonthFormat(DateTime.parse(data['created_at'])),
+                  text:
+                      Utils.getMonthFormat(DateTime.parse(data['created_at'])),
                   fontSize: 14,
                   color: AppColor.white.withOpacity(0.5),
                   margin: const EdgeInsets.only(bottom: 8),
@@ -53,9 +54,7 @@ class LiveLogsWidget extends StatelessWidget {
           ),
           const SizedBox(width: 24),
           Expanded(
-            child: AnimatedContainer(
-              duration: const Duration(milliseconds: 270),
-              curve: Curves.easeInOut,
+            child: Container(
               height: 100,
               padding: const EdgeInsets.symmetric(horizontal: 24),
               decoration: BoxDecoration(

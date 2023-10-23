@@ -1,5 +1,7 @@
 import 'package:beyond_factoring/src/color/app_color.dart';
 import 'package:beyond_factoring/src/ui/live_logs_screen.dart';
+import 'package:beyond_factoring/src/ui/quick_screen.dart';
+import 'package:beyond_factoring/src/ui/upgrade_plan_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: AppColor.background),
         useMaterial3: true,
       ),
-      home: const LiveLogsScreen(),
+      home: const QuickScreen(),
     );
   }
 }
